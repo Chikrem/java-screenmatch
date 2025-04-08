@@ -1,3 +1,4 @@
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -9,6 +10,7 @@ public class Principal {
         meuFilme.setIncluidoNoPlano(true);
         // meuFilme.totalDeAvaliacoes = 1;
         meuFilme.setDuracaoEmMinutos(148);
+        meuFilme.setDiretor("Christopher Nolan");
 
         meuFilme.avalia(8.5);
         meuFilme.avalia(10);
@@ -18,8 +20,13 @@ public class Principal {
         // Chama método que exibe a ficha técnica do filme
         meuFilme.exibeFichaTecnica();
 
-        System.out.println("****************************************");
+        CalculadoraDeTempo calculo = new CalculadoraDeTempo();
+        calculo.inclui(meuFilme);
+        calculo.inclui(meuFilme);
 
+        
+        System.out.println("****************************************");
+        
         // System.out.println(meuFilme.getSomaAvaliacoes());
         // System.out.println(meuFilme.getTotalAvaliacoes());
         Serie minhaSerie = new Serie();
@@ -32,7 +39,12 @@ public class Principal {
         minhaSerie.setAtiva(false);
         minhaSerie.avalia(9.5);
         System.out.println("****************************************");
-
+        
         minhaSerie.exibeFichaTecnica();
+        
+        System.out.println("****************************************");
+        
+        calculo.inclui(minhaSerie);
+        calculo.getTempoTotal();
     }
 }

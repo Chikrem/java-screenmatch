@@ -50,7 +50,10 @@ public class Titulo {
     public int setDuracaoEmMinutos(int duracaoEmMinutos) {
         this.duracaoEmMinutos = duracaoEmMinutos;
         return duracaoEmMinutos;
+    }
 
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
     }
 
 }

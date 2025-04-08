@@ -10,4 +10,9 @@ public class Filme extends Titulo {
     public void setDiretor(String diretor) {
         this.diretor = diretor;
     }
+
+    public void exibeFichaTecnica() {
+        super.exibeFichaTecnica();
+        System.out.println("Diretor: " + diretor);
+    }
 }

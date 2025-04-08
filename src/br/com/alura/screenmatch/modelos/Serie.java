@@ -10,8 +10,9 @@ public class Serie extends Titulo {
         super.exibeFichaTecnica();
         System.out.println("Temporadas: " + temporadas);
         System.out.println("Episódios por Temporada: " + episodiosPorTemporada);
-        System.out.println("Ativa: " + ativa);
         System.out.println("Minutos por Episódio: " + minutosPorEpisodio);
+        System.out.println("Duração total: " + getDuracaoEmMinutos() + " minutos");
+        System.out.println("Ativa: " + ativa);
     }
 
     public int getTemporadas() {
@@ -45,5 +46,8 @@ public class Serie extends Titulo {
     public void setMinutosPorTemporada(int minutosPorEpisodio) {
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
-    
+ 
+    public int getDuracaoEmMinutos() {
+        return this.episodiosPorTemporada * this.temporadas * this.minutosPorEpisodio;  
+    }
 }
