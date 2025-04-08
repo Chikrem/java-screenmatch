@@ -1,4 +1,5 @@
 import br.com.alura.screenmatch.modelos.Filme;
+import br.com.alura.screenmatch.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
@@ -19,7 +20,19 @@ public class Principal {
 
         System.out.println("****************************************");
 
-        System.out.println(meuFilme.getSomaAvaliacoes());
-        System.out.println(meuFilme.getTotalAvaliacoes());
+        // System.out.println(meuFilme.getSomaAvaliacoes());
+        // System.out.println(meuFilme.getTotalAvaliacoes());
+        Serie minhaSerie = new Serie();
+        minhaSerie.setNome("Game of Thrones");
+        minhaSerie.setAnoDeLancamento(2011);
+        minhaSerie.setIncluidoNoPlano(false);
+        minhaSerie.setTemporadas(8);
+        minhaSerie.setEpisodiosPorTemporada(10);
+        minhaSerie.setMinutosPorTemporada(60);
+        minhaSerie.setAtiva(false);
+        minhaSerie.avalia(9.5);
+        System.out.println("****************************************");
+
+        minhaSerie.exibeFichaTecnica();
     }
 }
