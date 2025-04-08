@@ -4,11 +4,15 @@ public class Principal {
         meuFilme.nome = "A Origem";
         meuFilme.anoDeLancamento = 2010;
         meuFilme.incluidoNoPlano = true;
-        meuFilme.avaliacao = 8.8;
-        meuFilme.totalDeAvaliacoes = 1000000;
+        meuFilme.totalDeAvaliacoes = 1;
         meuFilme.duracaoEmMinutos = 148;
 
-        System.out.println("Nome: " + meuFilme.nome);
-        System.out.println("Ano de Lançamento: " + meuFilme.anoDeLancamento);
+        // Chama método que exibe a ficha técnica do filme
+        meuFilme.avalia(8.5);
+        meuFilme.avalia(10);
+        meuFilme.avalia(10);
+        meuFilme.avalia(6.7);
+        
+        meuFilme.exibeFichaTecnica();
     }
 }
