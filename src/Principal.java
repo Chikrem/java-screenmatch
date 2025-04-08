@@ -7,12 +7,17 @@ public class Principal {
         meuFilme.totalDeAvaliacoes = 1;
         meuFilme.duracaoEmMinutos = 148;
 
-        // Chama método que exibe a ficha técnica do filme
         meuFilme.avalia(8.5);
         meuFilme.avalia(10);
         meuFilme.avalia(10);
         meuFilme.avalia(6.7);
         
+        // Chama método que exibe a ficha técnica do filme
         meuFilme.exibeFichaTecnica();
+
+        System.out.println("****************************************");
+
+        System.out.println(meuFilme.getSomaAvaliacoes());
+        System.out.println(meuFilme.getTotalAvaliacoes());
     }
 }
