@@ -1,4 +1,5 @@
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -38,6 +39,7 @@ public class Principal {
         minhaSerie.setMinutosPorTemporada(60);
         minhaSerie.setAtiva(false);
         minhaSerie.avalia(9.5);
+        minhaSerie.avalia(8);
         System.out.println("****************************************");
         
         minhaSerie.exibeFichaTecnica();
@@ -46,5 +48,10 @@ public class Principal {
         
         calculo.inclui(minhaSerie);
         calculo.getTempoTotal();
+        System.out.println("****************************************");
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
     }
 }

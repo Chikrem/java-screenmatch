@@ -12,7 +12,7 @@ public class Titulo {
         System.out.println("Nome: " + nome);
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
         System.out.println("Incluído no Plano: " + incluidoNoPlano);
-        System.out.println("Avaliação: " + somaDasAvaliacoes / totalDeAvaliacoes);
+        System.out.println("Avaliação: " + getMedia());
         System.out.println("Total de Avaliações: " + totalDeAvaliacoes);
         if (this.duracaoEmMinutos > 0) {
             System.out.println("Duração em Minutos: " + duracaoEmMinutos);
@@ -22,6 +22,13 @@ public class Titulo {
     public void avalia(double nota) {
         somaDasAvaliacoes += nota;
         totalDeAvaliacoes++;
+    }
+
+    public double getMedia() {
+        if (totalDeAvaliacoes == 0) {
+            return 0;
+        }
+        return somaDasAvaliacoes / totalDeAvaliacoes;
     }
 
     public int getTotalAvaliacoes() {

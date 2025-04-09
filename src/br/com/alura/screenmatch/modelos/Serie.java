@@ -50,4 +50,6 @@ public class Serie extends Titulo {
     public int getDuracaoEmMinutos() {
         return this.episodiosPorTemporada * this.temporadas * this.minutosPorEpisodio;  
     }
+
+    
 }
