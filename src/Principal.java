@@ -92,8 +92,9 @@ public class Principal {
 
         System.out.println("Tamanho da lista: " + listaDeFilmes.size());
         for (int i = 0; i < listaDeFilmes.size(); i++){
-            System.out.println(listaDeFilmes.get(i).getNome());
+            // System.out.println(listaDeFilmes.get(i).getNome());
+            System.out.println(listaDeFilmes.get(i).toString());
         }
-
+        
     }
 }
