@@ -8,6 +8,13 @@ public class Titulo {
     private int totalDeAvaliacoes = 0;
     private int duracaoEmMinutos;
 
+    public Titulo(String nome, int anoDeLancamento, boolean incluidoNoPlano, int duracaoEmMinutos) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+        this.incluidoNoPlano = incluidoNoPlano;
+        this.duracaoEmMinutos = duracaoEmMinutos;
+
+    }
     public void exibeFichaTecnica() {
         System.out.println("Nome: " + nome);
         System.out.println("Ano de Lançamento: " + anoDeLancamento);

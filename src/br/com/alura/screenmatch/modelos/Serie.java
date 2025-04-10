@@ -6,6 +6,14 @@ public class Serie extends Titulo {
     private boolean ativa;
     private int minutosPorEpisodio;
 
+    public Serie(String nome, int anoDeLancamento, boolean incluidoNoPlano, int duracaoEmMinutos, int temporadas, int episodiosPorTemporada, int minutosPorEpisodio, boolean ativa) {
+        super(nome, anoDeLancamento, incluidoNoPlano, duracaoEmMinutos);
+        this.temporadas = temporadas;
+        this.episodiosPorTemporada = episodiosPorTemporada;
+        this.ativa = ativa;
+        this.minutosPorEpisodio = minutosPorEpisodio;
+    }
+
     public void exibeFichaTecnica() {
         super.exibeFichaTecnica();
         System.out.println("Temporadas: " + temporadas);
