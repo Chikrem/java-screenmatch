@@ -44,6 +44,10 @@ public class Titulo {
         return nome;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public int setAnoDeLancamento(int anoDeLancamento) {
         this.anoDeLancamento = anoDeLancamento;
         return anoDeLancamento;
