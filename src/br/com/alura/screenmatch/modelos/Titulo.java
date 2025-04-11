@@ -8,7 +8,11 @@ public class Titulo {
     private int totalDeAvaliacoes = 0;
     private int duracaoEmMinutos;
 
-    public Titulo(String nome, int anoDeLancamento, boolean incluidoNoPlano, int duracaoEmMinutos) {
+    public Titulo(
+        String nome, 
+        int anoDeLancamento, 
+        boolean incluidoNoPlano, 
+        int duracaoEmMinutos) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
         this.incluidoNoPlano = incluidoNoPlano;

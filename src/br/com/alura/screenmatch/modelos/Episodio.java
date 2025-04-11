@@ -3,10 +3,30 @@ package br.com.alura.screenmatch.modelos;
 import br.com.alura.screenmatch.calculos.Classificavel;
 
 public class Episodio extends Serie implements Classificavel {
+
     private int numero;
     private String nome;
     private Serie serie;
     private int totalVisualizacoes;
+
+    public Episodio(
+        String nome, 
+        int anoDeLancamento, 
+        boolean incluidoNoPlano, 
+        int duracaoEmMinutos, 
+        int temporadas,
+        int episodiosPorTemporada, 
+        int minutosPorEpisodio, 
+        boolean ativa) 
+        {
+        super(nome, 
+        anoDeLancamento, 
+        incluidoNoPlano, 
+        duracaoEmMinutos, temporadas, 
+        episodiosPorTemporada,
+        minutosPorEpisodio,
+        ativa);
+    }
 
     public int getNumero() {
         return numero;
@@ -42,7 +62,7 @@ public class Episodio extends Serie implements Classificavel {
 
     @Override
     public int getClassificacao() {
-        if (totalVisualizacoes > 100){
+        if (totalVisualizacoes > 100) {
             return 4;
         } else {
             return 2;
