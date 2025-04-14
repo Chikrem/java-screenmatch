@@ -1,5 +1,6 @@
 package br.com.alura.screenmatch.principal;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -44,6 +45,12 @@ public class PrincipalComBusca {
             try {
                 Titulo meuTitulo = new Titulo(meuTituloOmdb);
                 System.out.println("Título: " + meuTitulo);
+
+                FileWriter escritor = new FileWriter("filmes.txt", true);
+                escritor.write("\n Título: " + meuTitulo.toString());
+                escritor.close();
+                System.out.println("Título salvo com sucesso!");
+
             } catch (ErroDeConversaoDeAnoException e) {
                 System.out.println(e.getMessage());
             } catch (NullPointerException e) {

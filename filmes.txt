@@ -1,0 +1,3 @@
+
+ Título: nome = 'Top Gun', anoDeLancamento = 1986, duracaoEmMinutos = 109 minutos
+ Título: nome = 'Matrix', anoDeLancamento = 1993, duracaoEmMinutos = 60 minutos
