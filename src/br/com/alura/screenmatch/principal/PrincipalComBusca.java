@@ -7,6 +7,10 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
 
+import com.google.gson.Gson;
+
+import br.com.alura.screenmatch.modelos.Titulo;
+
 public class PrincipalComBusca {
     public static void main(String[] args) throws IOException, InterruptedException {
 
@@ -23,7 +27,15 @@ public class PrincipalComBusca {
             .build();
             HttpResponse<String> response = client
             .send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
+            // System.out.println(response.body());
+
+            String json = response.body();
+            System.out.println(json);
+
+            Gson gson = new Gson();
+            Titulo meuTitulo = gson.fromJson(json, Titulo.class);
+            System.out.println("Título: " + meuTitulo.getNome());
+
         } 
     }
 }
