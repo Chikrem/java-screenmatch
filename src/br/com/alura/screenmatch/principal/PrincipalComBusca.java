@@ -11,6 +11,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import br.com.alura.screenmatch.excecao.ErroDeConversaoDeAnoException;
 import br.com.alura.screenmatch.modelos.Titulo;
 import br.com.alura.screenmatch.modelos.TitulosOmdb;
 
@@ -19,7 +20,7 @@ public class PrincipalComBusca {
 
         try (Scanner leitura = new Scanner(System.in)) {
             System.out.println("Digite o nome do filme que deseja buscar: ");
-            var nomeDoFilme = leitura.nextLine();
+            var nomeDoFilme = leitura.nextLine().replace(" ", "+");
             System.out.println("Buscando informações sobre o filme " + nomeDoFilme + "...");
 
             String endereco = "https://www.omdbapi.com/?t=" + nomeDoFilme + "&apikey=8b3fffff";
@@ -43,14 +44,18 @@ public class PrincipalComBusca {
             try {
                 Titulo meuTitulo = new Titulo(meuTituloOmdb);
                 System.out.println("Título: " + meuTitulo);
-            } catch (NumberFormatException e) {
-                System.out.println("Erro ao converter o ano de lançamento ou a duração do filme.");
+            } catch (ErroDeConversaoDeAnoException e) {
+                System.out.println(e.getMessage());
             } catch (NullPointerException e) {
                 System.out.println("Erro ao converter o título do filme.");
             } catch (Exception e) {
                 System.out.println("Erro inesperado: " + e.getMessage());
             }
 
+        } catch (NumberFormatException e) {
+            System.out.println("Erro ao ler a entrada do usuário: " + e.getMessage());
+        } finally {
+            System.out.println("Programa encerrado.");
         }
-    }
+    } 
 }
