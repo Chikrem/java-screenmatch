@@ -36,11 +36,20 @@ public class PrincipalComBusca {
             System.out.println(json);
 
             Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+
             TitulosOmdb meuTituloOmdb = gson.fromJson(json, TitulosOmdb.class);
             System.out.println("Título: " + meuTituloOmdb);
-            
-            Titulo meuTitulo = new Titulo(meuTituloOmdb);
-            System.out.println("Título: " + meuTitulo);
+
+            try {
+                Titulo meuTitulo = new Titulo(meuTituloOmdb);
+                System.out.println("Título: " + meuTitulo);
+            } catch (NumberFormatException e) {
+                System.out.println("Erro ao converter o ano de lançamento ou a duração do filme.");
+            } catch (NullPointerException e) {
+                System.out.println("Erro ao converter o título do filme.");
+            } catch (Exception e) {
+                System.out.println("Erro inesperado: " + e.getMessage());
+            }
 
         }
     }
